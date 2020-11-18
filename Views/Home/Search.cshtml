@@ -1,0 +1,20 @@
+﻿@model DonutSearchResult
+@{
+    ViewData["Title"] = "Here's Your Donut!";
+}
+
+Name: @Model.Name
+<br />
+Calories: @Model.Calories
+<br />
+
+@foreach (var extra in Model.Extras)
+{
+    @Html.DisplayFor(modelItem => extra) <br />
+}
+<br />
+@if (Model.PhotoURL != null && Model.PhotoURL != "")
+{
+    <img src="@Model.PhotoURL" width="500" />
+    <br />
+}
